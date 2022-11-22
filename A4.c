@@ -28,15 +28,14 @@ void readFile (int objectArray[ROWS][COLS], char * filename);
 int main (int argc, char* argv[])
 {
     int objectArray [ROWS][COLS] = { 0 };
-    char * file = malloc(sizeof(char) * strlen(argv[1]));
-    strcpy(file, argv[1]);
+    char * file = malloc(sizeof(char) * 5);
+    strcpy(file, "f.dat");
 
     node heap[ROWS] = {0};
 
     readFile(objectArray, file);
     constructHeapArray(heap, objectArray);
     buildMinHeap(heap);
-  //  heapSort(heap);
     printHeap(heap);
 }
 
