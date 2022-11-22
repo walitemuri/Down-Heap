@@ -2,7 +2,7 @@
 File Owned By: Wali Temuri 1183379
 CIS 25ROWS A4, Question 1 
 Email: wmtemuri@uoguelph.ca
-Date Created: ROWS22-11-21
+Date Created: 2022-11-21
 */
 
 #include <stdio.h>
