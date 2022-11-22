@@ -1,6 +1,6 @@
-q1: q1.c
-    gcc -Wall -std=c99 -pedantic -o q1 q1.c
+A4: A4.c
+    gcc -Wall -std=c99 -pedantic -o A4 A4.c
 
 clean:
 	rm *.o
-	rm *q1
+	rm *A4
