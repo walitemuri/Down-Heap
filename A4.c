@@ -155,8 +155,6 @@ Post: Prints content in order of array
 */
 void printHeap(node * arr)
 {
-    printf("Array representation of Heap is:\n");
- 
     for (int i = 0; i < ROWS; i++) {
         printf("%d %d %d %d %d %d %d %d %d %d\n",
         arr[i].key[0],arr[i].key[1],arr[i].key[2], arr[i].content[0], arr[i].content[1] , arr[i].content[2], 
