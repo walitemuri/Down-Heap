@@ -20,11 +20,17 @@ typedef struct Node{
 
 void swap (node *a, node *b);
 void heapify(node * arr, int N, int i);
-void buildMinHeap (node * arr);
+void downHeap (node * arr);
 void printHeap(node * arr);
 void constructHeapArray (node * heap , int opArray[ROWS][COLS]);
 void readFile (int objectArray[ROWS][COLS], char * filename);
 
+/*
+Function: Main  
+In: int argc, char* argv[]
+Out: 0
+Post: Reads data from f.dat file, computes downheap, prints result
+*/
 int main (int argc, char* argv[])
 {
     int objectArray [ROWS][COLS] = { 0 };
@@ -35,12 +41,17 @@ int main (int argc, char* argv[])
 
     readFile(objectArray, file);
     constructHeapArray(heap, objectArray);
-    buildMinHeap(heap);
+    downHeap(heap);
     printHeap(heap);
 }
 
-//Populate Array
 
+/*
+Function: Responsible for reading data file and populating a 2D array where each row is an object
+In: int objectArray[ROWS][COLS], char * filename
+Out: void
+Post: Populates 2D array with data
+*/
 void readFile (int objectArray[ROWS][COLS], char * filename) {
     
     FILE * ptr = fopen(filename , "r");
@@ -56,6 +67,12 @@ void readFile (int objectArray[ROWS][COLS], char * filename) {
     }
 }
 
+/*
+Function: Constructs the heap Array
+In: node *heap, int opArray[ROWS][COLS]
+Out: void
+Post: Transfer the data from each row in 2D array to heap array
+*/
 void constructHeapArray (node *heap, int opArray[ROWS][COLS]) {
    
     int sum;  
@@ -75,6 +92,12 @@ void constructHeapArray (node *heap, int opArray[ROWS][COLS]) {
     }
 }
 
+/*
+Function: swap
+In: node *a, node *b
+Out: void
+Post: Swaps the place of two nodes within an array
+*/
 void swap (node *a, node *b) {
     
     node tmp = *a;
@@ -83,28 +106,40 @@ void swap (node *a, node *b) {
     *b = tmp;
 }
 
+/*
+Function: Computes min heapify algorithm on node
+In: node * arr, int N, int i
+Out: void
+Post: The i'th node is compared with left and right child, if parent is smallest the alg stops, else a swap is computed
+*/
 void heapify(node * arr, int N, int i) {
 
-    int largest = i;
+    int smallest = i;
     int left = 2 * i + 1;
     int right = 2 * i + 2;
 
-    if (left < N && arr[left].sum_key < arr[largest].sum_key) {
-        largest = left;
+    if (left < N && arr[left].sum_key < arr[smallest].sum_key) {
+        smallest = left;
     }
 
-    if (right < N && arr[right].sum_key < arr[largest].sum_key) {
-        largest = right;
+    if (right < N && arr[right].sum_key < arr[smallest].sum_key) {
+        smallest = right;
     }
 
-    if (largest != i) {
-        swap((&arr[i]), (&arr[largest]));
+    if (smallest != i) {
+        swap((&arr[i]), (&arr[smallest]));
 
-        heapify(arr, N,largest);
+        heapify(arr, N,smallest);
     }
 }
 
-void buildMinHeap (node * arr) {
+/*
+Function: Function completes one iteration of downheap algorithm
+In: node * arr
+Out: void
+Post: Computes downheap in array
+*/
+void downHeap (node * arr) {
     int startIndex = (ROWS / 2) - 1;
 
     for (int i = startIndex; i >= 0; i--) {
@@ -112,6 +147,12 @@ void buildMinHeap (node * arr) {
     }
 }
 
+/*
+Function: Prints the heap array data content in order
+In: node * arr
+Out: void
+Post: Prints content in order of array
+*/
 void printHeap(node * arr)
 {
     printf("Array representation of Heap is:\n");
