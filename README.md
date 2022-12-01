@@ -4,15 +4,26 @@ Down-Heap Algorithm
 
 # Description
 
-In order to run the program, you must run the command:
+The program reads 200 2-digit integers from text file “f.dat” and stores the
+integers in an array of 20 rows and 10 columns. The program treats each row of the array as
+an object, with the sum of the first three integers being the key, and the other seven integers
+being the information content. 
 
+The program performes a down-heap using the keys (sum of first 3 integers in row) as the priority weight:
+
+* Each Row is one object
+* Each object has a key (sum of first 3 integers)
+* Each object has a data component (remaining 7 integers)
+* Each object is contained in a node
+* Tree is constructed and down-heap is performed on data
+* Output prints on cmnd line
 
 # Author Information
 
 Name: Wali Temuri 
 Contact: walitemuri@gmail.com
 
-#Running
+# Running
 
 ```
     make
