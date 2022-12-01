@@ -20,8 +20,8 @@ The program performes a down-heap using the keys (sum of first 3 integers in row
 
 # Author Information
 
-Name: Wali Temuri 
-Contact: walitemuri@gmail.com
+    Name: Wali Temuri
+    Contact: walitemuri@gmail.com
 
 # Running
 
