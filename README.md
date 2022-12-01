@@ -14,13 +14,13 @@ Contact: walitemuri@gmail.com
 
 #Running
 
-'''
+```
     make
-'''
+```
 
-'''
+```
     running: ./A4
-'''
+```
 
 # Sample Output
 ![Screen Shot 2022-11-22 at 4 00 55 AM](https://user-images.githubusercontent.com/108627530/203271266-4ae274a2-94be-44ca-a7ed-a381f9952fe9.png)
