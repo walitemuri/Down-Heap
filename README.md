@@ -18,8 +18,7 @@ The program performes a down-heap using the keys (sum of first 3 integers in row
 * Tree is constructed and down-heap is performed on data
 * Output prints on cmnd line
 
-```
-Example f.dat file:
+```Example f.dat file:
 
 25 00 54 25 19 25 81 21 02 78
 19 09 89 77 80 75 91 34 61 24
