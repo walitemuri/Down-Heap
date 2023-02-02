@@ -19,7 +19,7 @@ The program performes a down-heap using the keys (sum of first 3 integers in row
 * Output prints on cmnd line
 
 Example f.dat file:
-```
+```dat
 25 00 54 25 19 25 81 21 02 78
 19 09 89 77 80 75 91 34 61 24
 36 42 65 18 81 93 72 34 59 37
